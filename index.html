@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supermarket</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div>
+        <h1>🛒 Supermarket</h1>
+        <p>ร้านซุปเปอร์มาร์เก็ตออนไลน์</p>
+    </div>
+
+    <div class="header-buttons">
+
+        <a href="discount.html" class="admin-btn">
+            ⚙️ Admin
+        </a>
+
+        <button onclick="openCart()" class="cart-btn">
+            🛒 ตะกร้า
+            <span id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<nav>
+
+    <a href="#">🏠 หน้าแรก</a>
+
+    <a href="#category">🏷️ ประเภทสินค้า</a>
+
+    <a href="#products">🛍️ สินค้า</a>
+
+</nav>
+
+
+<!-- โปรโมชั่น -->
+
+<section class="banner">
+
+    <div>
+
+        <span class="hot">
+            🔥 HOT SALE
+        </span>
+
+        <h2>
+            โปรโมชั่นพิเศษ
+        </h2>
+
+        <p>
+            สินค้าลดราคาสูงสุด 30%
+        </p>
+
+        <button onclick="scrollToProducts()">
+            🛍️ ดูสินค้า
+        </button>
+
+    </div>
+
+    <div class="banner-icon">
+        🛒
+    </div>
+
+</section>
+
+
+<!-- ค้นหา -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔎 ค้นหาสินค้า..."
+        onkeyup="searchProduct()"
+    >
+
+</div>
+
+
+<!-- ประเภท -->
+
+<section id="category">
+
+    <h2>🏷️ ประเภทสินค้า</h2>
+
+    <div class="categories">
+
+        <button onclick="filterProduct('ทั้งหมด')">
+            🛒 ทั้งหมด
+        </button>
+
+        <button onclick="filterProduct('อาหาร')">
+            🍚 อาหาร
+        </button>
+
+        <button onclick="filterProduct('เครื่องดื่ม')">
+            🥤 เครื่องดื่ม
+        </button>
+
+        <button onclick="filterProduct('ขนม')">
+            🍫 ขนม
+        </button>
+
+        <button onclick="filterProduct('ของใช้ในบ้าน')">
+            🏠 ของใช้ในบ้าน
+        </button>
+
+        <button onclick="filterProduct('เครื่องเขียน')">
+            ✏️ เครื่องเขียน
+        </button>
+
+        <button onclick="filterProduct('เครื่องมือช่าง')">
+            🔨 เครื่องมือช่าง
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- สินค้า -->
+
+<section id="products">
+
+    <h2>🛍️ สินค้าทั้งหมด</h2>
+
+    <div id="productContainer" class="product-container">
+
+    </div>
+
+</section>
+
+
+<!-- ตะกร้า -->
+
+<div id="cartModal" class="cart-modal">
+
+    <div class="cart-box">
+
+        <button
+            class="close"
+            onclick="closeCart()">
+
+            ✕
+
+        </button>
+
+        <h2>🛒 ตะกร้าสินค้า</h2>
+
+        <div id="cartItems">
+
+            <p>
+                ยังไม่มีสินค้า
+            </p>
+
+        </div>
+
+        <hr>
+
+        <h3>
+            รวมทั้งหมด:
+            <span id="totalPrice">0.00</span>
+            บาท
+        </h3>
+
+        <button
+            class="checkout-btn"
+            onclick="checkout()">
+
+            💳 ไปชำระเงิน
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Supermarket
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
