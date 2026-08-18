@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - ลดราคา</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div>
+
+        <h1>⚙️ Admin</h1>
+
+        <p>
+            ระบบจัดการราคาสินค้า
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <a
+            href="index.html"
+            class="admin-btn"
+        >
+
+            🏠 กลับหน้าร้าน
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<div class="discount-container">
+
+    <h2>
+        🏷️ ลดราคาสินค้า
+    </h2>
+
+
+    <div class="discount-form">
+
+        <label>
+            เลือกสินค้า
+        </label>
+
+
+        <select id="product">
+
+            <option value="ข้าวหอมมะลิ"
+                    data-price="55">
+                ข้าวหอมมะลิ - 55 บาท
+            </option>
+
+            <option value="บะหมี่กึ่งสำเร็จรูป"
+                    data-price="7">
+                บะหมี่กึ่งสำเร็จรูป - 7 บาท
+            </option>
+
+            <option value="ขนมปัง"
+                    data-price="35">
+                ขนมปัง - 35 บาท
+            </option>
+
+            <option value="ไข่ไก่"
+                    data-price="45">
+                ไข่ไก่ - 45 บาท
+            </option>
+
+            <option value="ปลากระป๋อง"
+                    data-price="25">
+                ปลากระป๋อง - 25 บาท
+            </option>
+
+            <option value="คุกกี้"
+                    data-price="30">
+                คุกกี้ - 30 บาท
+            </option>
+
+
+            <option value="น้ำเปล่า"
+                    data-price="10">
+                น้ำเปล่า - 10 บาท
+            </option>
+
+            <option value="โค้ก"
+                    data-price="15">
+                โค้ก - 15 บาท
+            </option>
+
+            <option value="เป๊ปซี่"
+                    data-price="15">
+                เป๊ปซี่ - 15 บาท
+            </option>
+
+            <option value="น้ำส้ม"
+                    data-price="20">
+                น้ำส้ม - 20 บาท
+            </option>
+
+            <option value="นมสด"
+                    data-price="18">
+                นมสด - 18 บาท
+            </option>
+
+            <option value="กาแฟ"
+                    data-price="25">
+                กาแฟ - 25 บาท
+            </option>
+
+
+            <option value="ช็อกโกแลต"
+                    data-price="25">
+                ช็อกโกแลต - 25 บาท
+            </option>
+
+            <option value="ป๊อปคอร์น"
+                    data-price="35">
+                ป๊อปคอร์น - 35 บาท
+            </option>
+
+            <option value="ลูกอม"
+                    data-price="20">
+                ลูกอม - 20 บาท
+            </option>
+
+            <option value="มันฝรั่งทอด"
+                    data-price="30">
+                มันฝรั่งทอด - 30 บาท
+            </option>
+
+
+            <option value="น้ำยาล้างจาน"
+                    data-price="35">
+                น้ำยาล้างจาน - 35 บาท
+            </option>
+
+            <option value="สบู่"
+                    data-price="25">
+                สบู่ - 25 บาท
+            </option>
+
+            <option value="กระดาษทิชชู่"
+                    data-price="45">
+                กระดาษทิชชู่ - 45 บาท
+            </option>
+
+            <option value="ไม้กวาด"
+                    data-price="60">
+                ไม้กวาด - 60 บาท
+            </option>
+
+            <option value="ถังน้ำ"
+                    data-price="80">
+                ถังน้ำ - 80 บาท
+            </option>
+
+
+            <option value="ดินสอ"
+                    data-price="5">
+                ดินสอ - 5 บาท
+            </option>
+
+            <option value="ปากกา"
+                    data-price="10">
+                ปากกา - 10 บาท
+            </option>
+
+            <option value="สมุดโน้ต"
+                    data-price="25">
+                สมุดโน้ต - 25 บาท
+            </option>
+
+            <option value="ไม้บรรทัด"
+                    data-price="10">
+                ไม้บรรทัด - 10 บาท
+            </option>
+
+
+            <option value="ค้อน"
+                    data-price="120">
+                ค้อน - 120 บาท
+            </option>
+
+            <option value="ประแจ"
+                    data-price="100">
+                ประแจ - 100 บาท
+            </option>
+
+            <option value="ไขควง"
+                    data-price="80">
+                ไขควง - 80 บาท
+            </option>
+
+            <option value="น็อต"
+                    data-price="20">
+                น็อต - 20 บาท
+            </option>
+
+        </select>
+
+
+        <label>
+            ส่วนลด (%)
+        </label>
+
+
+        <input
+            type="number"
+            id="discount"
+            min="1"
+            max="100"
+            placeholder="เช่น 20"
+        >
+
+
+        <div class="price-preview">
+
+            ราคาปกติ:
+
+            <strong id="normalPrice">
+                0.00
+            </strong>
+
+            บาท
+
+            <br>
+
+            ราคาหลังลด:
+
+            <strong id="discountPrice">
+                0.00
+            </strong>
+
+            บาท
+
+        </div>
+
+
+        <button onclick="saveDiscount()">
+
+            💾 บันทึกโปรโมชั่น
+
+        </button>
+
+    </div>
+
+
+    <h2>
+        📋 รายการสินค้าที่กำลังลดราคา
+    </h2>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>
+                    สินค้า
+                </th>
+
+                <th>
+                    ราคาปกติ
+                </th>
+
+                <th>
+                    ส่วนลด
+                </th>
+
+                <th>
+                    ราคาหลังลด
+                </th>
+
+                <th>
+                    จัดการ
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody id="discountTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Supermarket Admin
+    </p>
+
+</footer>
+
+
+<script src="discount.js"></script>
+
+</body>
+
+</html>
